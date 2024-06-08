@@ -24,11 +24,15 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(to top, 
+                              rgb(37, 37, 59) 0%, 
+                              rgb(33, 141, 141) 50%, 
+                              rgb(37, 37, 59) 100%);
+color: white;
 }
+
+
 
 h1 {
   font-size: 3.2em;
