@@ -1,0 +1,25 @@
+.ItemListContainerComponent{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: white;
+    font-size: 2rem;
+    margin: auto;
+    width: 100wd;
+    height: 80vh;
+}
+
+.itemListContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+   
+        
+}
+
+.card {
+   min-width: 60px;
+    justify-content: space-between;
+    margin: 10px;
+  }
+  
