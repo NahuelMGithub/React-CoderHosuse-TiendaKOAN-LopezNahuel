@@ -5,12 +5,11 @@ Rutas a configurar
 ‘/category/:id’  <ItemListContainer />
 ‘/item/:id’ navega a <ItemDetailContainer />
 
-Links a configurar
+Links a configurarnpm
 Clickear en el brand debe navegar a ‘/’------> Listo
-Clickear un Item.js debe navegar a /item/:id ------> Listo (aunque podria mostralo con otra cosa q no sea un car)
-Clickear en una categoría del navbar debe navegar a /category/:categoryId 
+Clickear un Item.js debe navegar a /item/:id ------> Listo 
+Clickear en una categoría del navbar debe navegar a /category/:categoryId  L
 
-Para finalizar deberá integrar los parámetros de tus async-mocks para reaccionar 
-a :itemId y :categoryId ¡utilizando efectos y los hooks de parámetros que vimos en clase! Si te encuentras 
-en una categoría deberías poder detectar la navegación a otra categoría y volver a cargar los productos que 
-correspondan a dicha categoría.
+Cosas a cambiar y mandar la entrega
+el loading mejor centrado
+que sea un carrusel en lugar de un card en Item.id

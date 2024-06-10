@@ -1,4 +1,58 @@
 import React from 'react'
+import Figure from 'react-bootstrap/Figure';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import { Button } from 'bootstrap';
+import './ItemDetailComponent.css';
+
+
+const ItemDetailComponent = ({product}) => {
+ 
+
+  return (
+    <Figure className='figura'>
+    <Figure.Image className='figure-img'
+      width={300}
+      height={300}
+      alt="171x180"
+      src={product.thumbnail}
+    />
+    <Figure.Caption style={{color:"white"}}>
+      
+    <ListGroup className="list-group-flush">
+        <ListGroup.Item> Nombre {product.title}</ListGroup.Item>
+        <ListGroup.Item> Descripcion {product.description}</ListGroup.Item>
+        <ListGroup.Item> Restantes {product.stock}</ListGroup.Item>
+        <ListGroup.Item> Precio {product.discountPercentage}</ListGroup.Item>
+      </ListGroup>
+      
+        <div style={{backgroundColor: "black", padding: "5px"}}>
+        <Card.Link href="#" style={{color: "white", margin: "5px"}}>Agregar a favoritos</Card.Link> 
+        <Card.Link href="#" style={{color: "white", margin: "5px"}}>Comprar ahora</Card.Link> 
+        
+        </div>
+
+    </Figure.Caption>
+  </Figure>
+
+
+  )
+}
+
+export default ItemDetailComponent
+
+/* after minuto 58 al 64
+
+  
+  */
+
+
+    // importaciones para carrusel
+
+
+
+/*
+import React from 'react'
 
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -30,37 +84,6 @@ const ItemDetailComponent = ({product}) => {
 
 export default ItemDetailComponent
 
-/* after minuto 58 al 64
-<Carousel>
-      <Carousel.Item>
-        <ExampleCarouselImage text="First slide" />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <ExampleCarouselImage text="Second slide" />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <ExampleCarouselImage text="Third slide" />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
-  
-  */
 
 
-    // importaciones para carrusel
-
-   // import Carousel from 'react-bootstrap/Carousel';
-//import ExampleCarouselImage from 'components/ExampleCarouselImage';
+*/ 
