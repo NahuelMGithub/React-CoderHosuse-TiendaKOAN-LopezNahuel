@@ -4,10 +4,22 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Button } from 'bootstrap';
 import './ItemDetailComponent.css';
-
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetailComponent = ({product}) => {
- 
+const {cart, addToCart, decreaseToCart} = React.useContext(CartContext); 
+const [quantity, setQuantity] = React.useState(0);
+
+
+const handleAdd = ()=>{
+  setQuantity( quantity + 1);
+  addToCart(product, 1);
+}
+
+const handleRemove = ()=>{
+  setQuantity( quantity - 1);
+  decreaseToCart(product, 1);
+}
 
   return (
     <Figure className='figura'>
@@ -27,6 +39,8 @@ const ItemDetailComponent = ({product}) => {
       </ListGroup>
       
         <div style={{backgroundColor: "black", padding: "5px"}}>
+          <div><button onClick={handleAdd}> + </button> <span>{quantity} </span><button onClick={handleRemove}> - </button></div>
+
         <Card.Link href="#" style={{color: "white", margin: "5px"}}>Agregar a favoritos</Card.Link> 
         <Card.Link href="#" style={{color: "white", margin: "5px"}}>Comprar ahora</Card.Link> 
         
