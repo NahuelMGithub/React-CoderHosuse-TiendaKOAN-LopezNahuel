@@ -7,7 +7,7 @@ import './ItemDetailComponent.css';
 import { CartContext } from '../../context/CartContext';
 
 const ItemDetailComponent = ({product}) => {
-const {cart, addToCart, decreaseToCart} = React.useContext(CartContext); 
+const {cart, addToCart, removeFromCart} = React.useContext(CartContext); 
 const [quantity, setQuantity] = React.useState(0);
 
 
@@ -18,7 +18,7 @@ const handleAdd = ()=>{
 
 const handleRemove = ()=>{
   setQuantity( quantity - 1);
-  decreaseToCart(product, 1);
+  removeFromCart(product, 1);
 }
 
   return (

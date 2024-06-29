@@ -6,9 +6,9 @@ const LoaderComponent = () => {
 
     lineSpinner.register()
     return (
-        <div style={{width:"100%", height: "50%", color:"white"}}>     
+        <div style={{width:"100%", height: "100vh", color:"white", display:"flex", alignItems:"center", justifyContent:"center"}}>     
               <l-line-spinner
-            size="40"
+            size="100"
             stroke="3"
             speed="1"
             color="white"

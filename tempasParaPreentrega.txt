@@ -1,15 +1,14 @@
-Se debe entregar.
 
-Rutas a configurar
-‘/’ navega a <ItemListContainer />
-‘/category/:id’  <ItemListContainer />
-‘/item/:id’ navega a <ItemDetailContainer />
-
-Links a configurarnpm
-Clickear en el brand debe navegar a ‘/’------> Listo
-Clickear un Item.js debe navegar a /item/:id ------> Listo 
-Clickear en una categoría del navbar debe navegar a /category/:categoryId  L
 
 Cosas a cambiar y mandar la entrega
 el loading mejor centrado
-que sea un carrusel en lugar de un card en Item.id
+Page carrito. mejorar estetica. 
+Permitir mas fotos
+Btn sumar aumentar compra
+Ver fotos
+
+Detalle del producto.
+Ver mas fotos
+Mejorar estetica
+
+pages de erro de carga. 404 crar componente error. si no sale, buscar en git o video. 12 min 30 aprox

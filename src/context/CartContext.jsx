@@ -27,13 +27,30 @@ export const CartProvider = ({children})=>{
         })
     }
 
-    const decreaseToCart = (product, quantity) =>{
-       if (cart >0){
-        setCart(cart - 1)
-       }
+    const removeFromCart = (product, quantity) =>{
+        setCart((prevCart) => {
+            return prevCart.reduce((acc, item)=>{
+                if(item.id === product.id){
+                    const nweQuantiyty = item.quantity - quantity
+                    if(nweQuantiyty >0){
+                        acc.push({...item, quantity: nweQuantiyty})
+                    } 
+                } else{
+                    acc.push(item)
+                }
+                return acc;
+            }, [])
+        });
+       
     }
+
+    const deleteFromCart = (product) => {
+        setCart((prevCart) => {
+          return prevCart.filter((item) => item.id !== product.id);
+        });
+      }
     
-    return  <CartContext.Provider value={{cart, addToCart, decreaseToCart}}>{children}  </CartContext.Provider>
+    return  <CartContext.Provider value={{cart, addToCart, removeFromCart, deleteFromCart}}>{children}  </CartContext.Provider>
     
 
 }
