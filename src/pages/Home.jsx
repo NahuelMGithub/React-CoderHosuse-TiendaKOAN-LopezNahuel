@@ -4,9 +4,9 @@ import LoaderComponent from '../components/LoaderComponent/LoaderComponent'
 import useProducts from '../hooks/useProducts'
 
 const Home = () => {
-  const {products, loading} = useProducts();
+  const {items, loading} = useProducts("products");
   return loading? (<LoaderComponent/> ) :(
-  <div>   <ItemListContainerComponent products={products}/> </div>
+  <div>   <ItemListContainerComponent products={items}/> </div>
   )
 }
 

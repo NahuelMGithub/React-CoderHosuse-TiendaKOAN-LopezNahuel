@@ -1,20 +1,26 @@
 import React, { useState } from 'react'
-import {getAllProducts} from '../services/products'
+import {collection, getDocs, getFirestore} from "firebase/firestore"
 
-export const useProducts = () => {
+export const useProducts = (collectionName) => {
 
-  const [products, setProducts] = React.useState([]);
+// para FireBase se hace SIEMPRE IGUAL
+
+
+  const [items, setItems] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
     React.useEffect(()=>{
-        getAllProducts()
-        .then(resp => setProducts(resp.data.products))
-        .catch(res => console.log(res))
-        .finally(()=>{
-          setLoading(false)
-        })
+       const db = getFirestore() // Primero incializo la base de datos de firebase (la que cree yo)
+       const productsCollection = collection(db, collectionName) // Segundo incializo la Coleccion de datos de firebase (la que cree yo)
+       // ahora obtengo los datos puntualmente
+
+       getDocs(productsCollection).then((snapshot)=>{
+        setItems(snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()})));
+       }).catch((err) => console.log(err)).finally(()=> setLoading(false))
+
+
     }, []) 
 
-  return {products, loading}
+  return {items, loading}
     
   
 }

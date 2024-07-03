@@ -7,6 +7,7 @@ import Cart from '../pages/Cart'
 
 import NavBarComponent from '../components/NavBarComponent/NavBarComponent';
 import ClaseDeRendering from '../pages/ClaseDeRendering'
+import PropTypesPages from '../pages/PropTypesPages'
 
 const MainRouter = () => {
   return (
@@ -17,6 +18,9 @@ const MainRouter = () => {
     < Route path='/item/:id' element= {<Item/>} />
     < Route path='/category/:id' element= {<Category/>} />
     < Route path='/cart' element= {<Cart/>} />
+    < Route path='/proptypes' element= {<PropTypesPages/>} />
+  {/*   < Route path='/checkout' element= {<Checkout/>} />
+    < Route path='/*' element= {<h1> Not Found</h1>} /> */}
     < Route path='/rendering' element= {<ClaseDeRendering />} />
    </Routes>
       

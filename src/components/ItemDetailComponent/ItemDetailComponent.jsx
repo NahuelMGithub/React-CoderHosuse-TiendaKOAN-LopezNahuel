@@ -35,7 +35,7 @@ const handleRemove = ()=>{
         <ListGroup.Item> Nombre {product.title}</ListGroup.Item>
         <ListGroup.Item> Descripcion {product.description}</ListGroup.Item>
         <ListGroup.Item> Restantes {product.stock}</ListGroup.Item>
-        <ListGroup.Item> Precio {product.discountPercentage}</ListGroup.Item>
+        <ListGroup.Item> Precio {product.price}</ListGroup.Item>
       </ListGroup>
       
         <div style={{backgroundColor: "black", padding: "5px"}}>

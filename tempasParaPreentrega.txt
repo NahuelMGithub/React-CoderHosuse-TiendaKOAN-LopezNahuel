@@ -1,14 +1,45 @@
 
 
-Cosas a cambiar y mandar la entrega
-el loading mejor centrado
 Page carrito. mejorar estetica. 
-Permitir mas fotos
+
 Btn sumar aumentar compra
-Ver fotos
 
 Detalle del producto.
-Ver mas fotos
 Mejorar estetica
+Al disminuir, NO puede ser menor a cero.
+
 
 pages de erro de carga. 404 crar componente error. si no sale, buscar en git o video. 12 min 30 aprox
+
+
+confirmacion de pago clase 14 minuto 1.20 a 1.28 checkOut. MUy importante
+
+swit alerte  clase 14 desde 1.30 a 1.35
+
+
+para buscar un 10 necesito:
+buena documentacion
+buenas funcionalidades
+bien estructurado.
+
+
+
+
+
+
+Luego de los cambios:
+npm run build
+firebase deploy
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+    LISTOS
+
+    hacer 7 productos bd
+categorias.
+solucionar que no se vean al buscar
+
+
+
+el loading mejor centrado  LISTO

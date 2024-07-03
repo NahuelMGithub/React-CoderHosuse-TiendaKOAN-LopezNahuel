@@ -9,16 +9,21 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import CartWodgetComponent from '../CartWodgetComponent/CartWodgetComponent';
 import { getAllCategory } from '../../services/products';
+import {useProducts} from "../../hooks/useProducts"
 
 const NavBarComponent = () => {
 
-  const [categories, setCategories] = React.useState([])
+  const {items} = useProducts("category")
+
+/* Esto era para traer desde la api. Tener en cuenta que en la api usa           <NavDropdown.Item key={category.... (otra cosa)}> 
+
+const [categories, setCategories] = React.useState([])
 
   React.useEffect(()=>{
     getAllCategory()
     .then(res => setCategories(res.data))
     .catch(err => console.log(err))
-  })
+  }) */
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary"  bg="dark" data-bs-theme="dark">
@@ -31,9 +36,9 @@ const NavBarComponent = () => {
          
           <NavDropdown title="Categorias" id="basic-nav-dropdown">
 
-          {categories.map((category)=>{
+          {items.map((category)=>{
             return (
-               <NavDropdown.Item key={category.slug}>
+               <NavDropdown.Item key={category.id}>
                   <Link to={`category/${category.slug}`}> {category.name} </Link>
                </NavDropdown.Item>
             )
