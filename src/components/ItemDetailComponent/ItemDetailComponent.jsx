@@ -5,6 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { Button } from 'bootstrap';
 import './ItemDetailComponent.css';
 import { CartContext } from '../../context/CartContext';
+import { Link } from "react-router-dom";
 
 const ItemDetailComponent = ({product}) => {
 const {cart, addToCart, removeFromCart} = React.useContext(CartContext); 
@@ -17,8 +18,11 @@ const handleAdd = ()=>{
 }
 
 const handleRemove = ()=>{
+if(quantity>0 ){ 
   setQuantity( quantity - 1);
   removeFromCart(product, 1);
+}
+
 }
 
   return (
@@ -41,8 +45,9 @@ const handleRemove = ()=>{
         <div style={{backgroundColor: "black", padding: "5px"}}>
           <div><button onClick={handleAdd}> + </button> <span>{quantity} </span><button onClick={handleRemove}> - </button></div>
 
-        <Card.Link href="#" style={{color: "white", margin: "5px"}}>Agregar a favoritos</Card.Link> 
-        <Card.Link href="#" style={{color: "white", margin: "5px"}}>Comprar ahora</Card.Link> 
+
+
+        <Link style={{width:"150px", margin:"auto"}} to={'/cart'}> <button> Ir a Carrito </button>  </Link> 
         
         </div>
 

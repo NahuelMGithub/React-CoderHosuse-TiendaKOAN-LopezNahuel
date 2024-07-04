@@ -1,6 +1,9 @@
 import React from "react";
+
 import { CartContext } from "../context/CartContext";
-import {collection, getFirestore, addDoc} from "firebase/firestore"
+
+import { Link } from "react-router-dom";
+
 
 
 const Cart = () => {
@@ -15,25 +18,14 @@ const Cart = () => {
     deleteFromCart(item);
   };
 
- const createOrder =()=>{
- const items = cart.map(item=>(
-{  id: item.id,
-  title:items.title,
-  quantity: item.quantity}
+  const [totalAPagar, setTotalAPagar] = React.useState(0);
 
- ) )
+  React.useEffect(() => {
+    // Calcula el total sumando los precios multiplicados por la cantidad de cada producto
+    const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+    setTotalAPagar(total);
+}, [cart]); // Se ejecuta cada vez que cambia el carrito
 
-const order = {
-  items:items
-}
-
-const db = getFirestore();
-const ordersCollection = collection(db, "orders");
-addDoc(ordersCollection, order)
-.then(({id})=>console.log(id))
-.catch(err => console.log(err))
-
-} 
 
   return (
     <div>
@@ -56,20 +48,27 @@ addDoc(ordersCollection, order)
                 <p>Cantidad: {item.quantity}</p>
                 <button onClick={() => handleRemoveOne(item)}>-</button>
                 <button onClick={() => handleDeleteItem(item)}>Eliminar</button>
+                
               </div>
             ))}
           </div>
           <div style={{ flex: 1, padding: "10px" }}>
             {cart.map((item, index) => (
+                 
               <div
                 key={index}
                 style={{ margin: "10px", padding: "10px", textAlign: "right" }}
               >
-                <p>Total: ${item.price * item.quantity}</p>
+                <p>Total en juego: {item.title} = ${item.price * item.quantity}</p>
+             
               </div>
+
             ))}
+            <div>
+              Total a Pagar: {totalAPagar}
+              </div>
           </div>
-        <button onClick={createOrder}> Comprar </button>
+        <Link style={{width:"150px", margin:"auto"}} to={'/checkout'}> <button> Realizar compra </button>  </Link> 
         </div>
       ) : (
         <p>Tu carrito está vacío</p>

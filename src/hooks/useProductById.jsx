@@ -15,9 +15,9 @@ export const useProductById = (id) => {
 
         getDoc(producRef).then((snapshot)=>{
             setProduct({id: snapshot.id, ...snapshot.data()} )
-        }).catch(()=>setError(true)).finally(()=> setLoading(flase))
+        }).catch(()=>setError(true)).finally(()=> setLoading(false))
 
     }, [id]);
-    return {product}
+    return {product, loading, error}
 
 }

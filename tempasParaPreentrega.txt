@@ -1,31 +1,9 @@
 
-
-Page carrito. mejorar estetica. 
-
-Btn sumar aumentar compra
-
-Detalle del producto.
-Mejorar estetica
-Al disminuir, NO puede ser menor a cero.
-
-
-pages de erro de carga. 404 crar componente error. si no sale, buscar en git o video. 12 min 30 aprox
-
-
-confirmacion de pago clase 14 minuto 1.20 a 1.28 checkOut. MUy importante
-
-swit alerte  clase 14 desde 1.30 a 1.35
-
-
 para buscar un 10 necesito:
 buena documentacion
-buenas funcionalidades
-bien estructurado.
 
 
-
-
-
+ver rapido video after
 
 Luego de los cambios:
 npm run build
@@ -43,3 +21,19 @@ solucionar que no se vean al buscar
 
 
 el loading mejor centrado  LISTO
+
+
+pages de erro de carga. 404 crar componente error. si no sale, buscar en git o video. 12 min 30 aprox
+
+
+Al disminuir, NO puede ser menor a cero.
+
+Btn sumar aumentar compra
+
+
+
+swit alerte  clase 14 desde 1.30 a 1.35
+
+
+
+Leer en coder que necesito para entrega

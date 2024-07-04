@@ -8,6 +8,8 @@ import Cart from '../pages/Cart'
 import NavBarComponent from '../components/NavBarComponent/NavBarComponent';
 import ClaseDeRendering from '../pages/ClaseDeRendering'
 import PropTypesPages from '../pages/PropTypesPages'
+import Error from '../pages/Error'
+import Checkout from '../pages/Checkout'
 
 const MainRouter = () => {
   return (
@@ -19,9 +21,9 @@ const MainRouter = () => {
     < Route path='/category/:id' element= {<Category/>} />
     < Route path='/cart' element= {<Cart/>} />
     < Route path='/proptypes' element= {<PropTypesPages/>} />
-  {/*   < Route path='/checkout' element= {<Checkout/>} />
-    < Route path='/*' element= {<h1> Not Found</h1>} /> */}
-    < Route path='/rendering' element= {<ClaseDeRendering />} />
+    < Route path="*" element={<Error/>} />
+    < Route path="/checkout" element={<Checkout/>} />
+    < Route path='/rendering' element= {<ClaseDeRendering/>} />
    </Routes>
       
     </BrowserRouter>
